@@ -27,12 +27,12 @@
 			var valuesForm = {user_name: $("#user_name").val(), password: $("#password").val()};
 			var jqXHR = $.post("/log", valuesForm)
 			.done(function(data){
-				console.log(data);
-				if(data.success){
-					window.location = data.url;	
-				}else if(data.success === false){
+				window.location = data.url;		
+			})
+			.fail(function(data){
+				if(data.responseJSON.successAuth === false){
 					$("#error_login").html("wrong username and/or password.")
-				}				
+				}
 			});
 		},
 	}

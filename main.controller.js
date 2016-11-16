@@ -1,7 +1,9 @@
 var fs = require('fs');
-var usersPath = __dirname + "/users.json";
-
 var bcrypt = require('bcrypt');
+
+const urlAuthSuccess = "https://enigmatic-ravine-19708.herokuapp.com/my_space.html";
+const usersPath = __dirname + "/users.json";
+
 
 module.exports = {
 	authentify: function(bodyReq, res){
@@ -11,9 +13,9 @@ module.exports = {
 			bcrypt.compare(bodyReq.password, parsedFile[0].password, function(err, compared) {
 				if(compared){
 					console.log("match");
-					res.json({success: true, url:"https://enigmatic-ravine-19708.herokuapp.com/my_space.html"});
+					res.json({successAuth: true, url:urlAuthSuccess});
 				}else{
-					res.json({success: false});
+					res.status(403).json({successAuth: false});
 				}
 			});
 		});
