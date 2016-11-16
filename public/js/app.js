@@ -1,6 +1,5 @@
 (function() {
 	var app = {
-		localurl:"http://192.168.1.107:8080",
 
 		init : function(){
 			this.formSettings();

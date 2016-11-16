@@ -27,4 +27,4 @@ app.use(function(err, req, res, next) {
 });
 
 //server init
-app.listen(8080);
+app.listen(process.env.PORT || 5000);
