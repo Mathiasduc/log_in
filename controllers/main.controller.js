@@ -2,7 +2,6 @@ var fs = require('fs');
 var usersPath = __dirname + "/../private/users.json";
 
 var bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 module.exports = {
 	authentify: function(bodyReq, res){
