@@ -27,6 +27,7 @@
 			var valuesForm = {user_name: $("#user_name").val(), password: $("#password").val()};
 			var jqXHR = $.post("/log", valuesForm)
 			.done(function(data){
+				console.log(data);
 				if(data.success){
 					window.location = data.url;	
 				}else if(data.success === false){

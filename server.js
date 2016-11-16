@@ -1,7 +1,7 @@
 //dependencies
 var express = require("express");
 var bodyParser = require('body-parser');
-var controllers = require('./controllers/main.controller.js');
+var controllers = require('./main.controller.js');
 var app = express();
 var jsonParser = bodyParser.json();
 
@@ -27,4 +27,4 @@ app.use(function(err, req, res, next) {
 });
 
 //server init
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 8080);
